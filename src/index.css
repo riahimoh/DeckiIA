@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.animation-bounce-subtle {
+  animation: bounce-subtle 2s infinite;
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Add smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Video container styles */
+.video-compact {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.video-compact iframe {
+  aspect-ratio: 16/9;
+  max-height: 200px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .video-compact iframe {
+    max-height: min(200px, 33vh);
+  }
+
+  .transform-gpu {
+    transform-origin: center;
+  }
+
+  .transform-gpu:nth-child(1) {
+    transform: scale(3);
+  }
+
+  .transform-gpu:nth-child(n+2) {
+    transform: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .transform-gpu {
+    transform: none;
+  }
+}
+
+.expert-word {
+  display: inline;
+}
+
+.inline-e {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
